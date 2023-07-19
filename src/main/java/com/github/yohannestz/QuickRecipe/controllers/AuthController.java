@@ -39,7 +39,7 @@ public class AuthController {
         return ResponseEntity.ok(new AuthResponse(jwtToken));
     }
 
-    @PostMapping("/authenticate")
+    @PostMapping("/signIn")
     public ResponseEntity<AuthResponse> register(@RequestBody AuthRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -50,7 +50,6 @@ public class AuthController {
         User foundUser = userRepository.findByEmail(request.getEmail())
                 .orElseThrow();
         String jwtToken = jwtService.generateToken(foundUser);
-
         return ResponseEntity.ok(new AuthResponse(jwtToken));
     }
 }

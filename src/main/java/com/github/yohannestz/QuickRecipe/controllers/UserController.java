@@ -31,11 +31,12 @@ public class UserController {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
     }
 
-    @PostMapping
+    // moved to AuthController
+    /*@PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public User createUser(@RequestBody User user) {
         return userRepository.save(user);
-    }
+    }*/
 
     @DeleteMapping("/id/{id}")
     public Map<String, String> deleteUser(@PathVariable(value = "id") Long userId) throws ResourceNotFoundException {
