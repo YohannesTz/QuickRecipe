@@ -29,8 +29,23 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.2'
 
 	runtimeOnly 'com.mysql:mysql-connector-j'
+	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+/*
+bootJar {
+	archiveFileName = "quick-recipe-backend.jar"
+	archiveVersion = "1.0"
+	mainClassName = "com.github.yohannestz.QuickRecipe.QuickRecipeApplication"
+	from {
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	}
+	manifest {
+		attributes 'Main-Class': 'com.example.YourMainClass'
+	}
+}
+*/
 
 tasks.named('test') {
 	useJUnitPlatform()
