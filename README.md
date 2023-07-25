@@ -21,8 +21,20 @@ that require user authentication and data management.
 - PostgreSQL: A powerful, open-source relational database management system.
 - Spring Boot Starter Test: A Spring Boot starter that provides support for testing the application using various testing frameworks and tools.
 
-# running from commandline
+# Running from commandline
 
 ```bash
 ./gradlew bootRun
+```
+
+# Environment variables expected 
+
+```
+DATA_SOURCE_URL=
+DATA_SOURCE_USERNAME=
+DATA_SOURCE_PASSWORD=
+DATA_SOURCE_DRIVER_CLASS_NAME=
+DATA_SOURCE_DATABASE_PLATFORM=
+DATA_SOURCE_HIBERNATE_DIALECT=
+SHOW_SQL=
 ```
