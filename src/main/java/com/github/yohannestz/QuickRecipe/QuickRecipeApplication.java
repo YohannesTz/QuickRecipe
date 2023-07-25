@@ -5,11 +5,7 @@ import org.springframework.boot.actuate.autoconfigure.metrics.SystemMetricsAutoC
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@SpringBootApplication(
-		exclude = {
-				SystemMetricsAutoConfiguration.class
-		}
-)
+@SpringBootApplication()
 @EntityScan("com.github.yohannestz.QuickRecipe.domain")
 public class QuickRecipeApplication {
 	public static void main(String[] args) {
