@@ -18,6 +18,7 @@ public class Recipe {
 
     private String title;
 
+    private String description;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Instruction> instructions = new ArrayList<>();
@@ -33,11 +34,12 @@ public class Recipe {
 
     public Recipe() {}
 
-    public Recipe(Long userId, String title, List<Instruction> instructions, List<Ingredient> ingredients) {
+    public Recipe(Long userId, String title, List<Instruction> instructions, List<Ingredient> ingredients, String description) {
         this.userId = userId;
         this.title = title;
         this.instructions = instructions;
         this.ingredients = ingredients;
+        this.description = description;
     }
 
     public Recipe(Long userId, String title) {
@@ -99,6 +101,14 @@ public class Recipe {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
